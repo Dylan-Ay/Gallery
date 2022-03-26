@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;700&display=swap" rel="stylesheet">    <title>Gallery</title>
+</head>
+<body>
+    <h1>Gallery</h1>
+    <div id="button-box">
+        <div id="show-all" class="allbutons">Show All</div>
+        <div id="cars" class="allbutons">Cars</div>
+        <div id="nature" class="allbutons">Nature</div>
+        <div id="plane" class="allbutons">Planes</div>
+    </div>
+    <div class="row" id="row-image">
+      <div id="my-modal" class="modal">
+        <figure class="overlay-close">
+          <img class="modal-content"id="modal-image">
+          <figcaption id="close">&times;</figcaption>
+        </figure>
+      </div>
+      <div class="column" id="column-avion">
+          <img src="images/avion-1.jpg" class="avion" alt="image avion">
+          <img src="images/avion-2.jpg" class="avion" alt="image avion">
+          <img src="images/avion-3.jpg" class="avion" alt="image avion">
+      </div>
+      <div class="column" id="column-nature">
+          <img src="images/nature-1.jpg" class="nature" alt="image nature">
+          <img src="images/nature-2.jpg" class="nature" alt="image nature">
+          <img src="images/nature-3.jpg" class="nature" alt="image nature">
+      </div>
+      <div class="column" id="column-voiture">
+          <img src="images/voiture-1.jpg" class="voiture" alt="image voiture">
+          <img src="images/voiture-2.jpg" class="voiture" alt="image voiture">
+          <img src="images/voiture-3.jpg" class="voiture" alt="image voiture">
+      </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
