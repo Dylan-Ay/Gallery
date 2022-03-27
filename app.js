@@ -1,13 +1,10 @@
-// GALERY
+// Gallery
 let buttonShowAll = document.getElementById('show-all');
 let buttonCars = document.getElementById('cars');
 let buttonNature = document.getElementById('nature');
 let buttonPlanes = document.getElementById('plane');
 let allButtons = document.querySelectorAll('.allbutons');
 let rowImage = document.getElementById('row-image');
-//let carsAttribute = document.querySelectorAll('.voiture');
-//let natureAttribute = document.querySelectorAll('.nature');
-//let planesAttribute = document.querySelectorAll('.avion');
 let carsColumn = document.getElementById("column-voiture");
 let natureColumn = document.getElementById("column-nature");
 let planesColumn = document.getElementById("column-avion");
@@ -32,15 +29,6 @@ function showCars(){
     natureColumn.style.display = "none";
     planesColumn.style.display = "none";
     carsColumn.style.display = "block";
-    /*natureAttribute.forEach(element => {
-        element.style.display = "none";
-    });
-    planesAttribute.forEach(element => {
-        element.style.display = "none";
-    });
-    carsAttribute.forEach(element => {
-        element.style.display = "block";
-    });*/
 };
 
 buttonCars.addEventListener("click", showCars);
@@ -50,15 +38,6 @@ function showPlanes(){
     natureColumn.style.display = "none";
     carsColumn.style.display = "none";
     planesColumn.style.display = "block";
-    /*natureAttribute.forEach(element => {
-        element.style.display = "none";
-    });
-    carsAttribute.forEach(element => {
-        element.style.display = "none";
-    });
-    planesAttribute.forEach(element => {
-        element.style.display = "block";
-    });*/
 };
 
 buttonPlanes.addEventListener("click", showPlanes);
@@ -68,15 +47,6 @@ function showNature(){
     carsColumn.style.display = "none";
     planesColumn.style.display = "none";
     natureColumn.style.display = "block";
-    /*carsAttribute.forEach(element => {
-        element.style.display = "none";
-    });
-    planesAttribute.forEach(element => {
-        element.style.display = "none";
-    });
-    natureAttribute.forEach(element => {
-        element.style.display = "block";
-    });*/
 };
 
 buttonNature.addEventListener("click", showNature);
@@ -86,15 +56,6 @@ function showAll(){
     carsColumn.style.display = "block";
     planesColumn.style.display = "block";
     natureColumn.style.display = "block";
-    /*carsAttribute.forEach(element => {
-        element.style.display = "block";
-    });
-    planesAttribute.forEach(element => {
-        element.style.display = "block";
-    });
-    natureAttribute.forEach(element => {
-        element.style.display = "block";
-    });*/
 };
 
 buttonShowAll.addEventListener("click", showAll);
@@ -102,7 +63,7 @@ buttonShowAll.addEventListener("click", showAll);
 // MODAL
 let modal = document.getElementById('my-modal');
 let modalImg = document.getElementById("modal-image");
-let allImages = document.querySelectorAll('img');
+let allImages = document.querySelectorAll('.avion, .voiture, .nature');
 let close = document.getElementById('close');
 
 function displayModal(){
@@ -119,3 +80,36 @@ function closeModal(){
 }
 
 close.addEventListener("click", closeModal);
+
+// SLIDER
+let prev = document.getElementById('prev');
+let next = document.getElementById('next');
+let current = 0;
+
+// Afficher photo précédente
+function slideLeft() {
+    modalImg.src = allImages[current - 1].src;
+    current--;
+}
+
+// Afficher photo suivante
+function slideRight() {
+    modalImg.src = allImages[current + 1].src;
+    current++;
+}
+
+// Clique sur la flèche de gauche
+prev.addEventListener("click", function () {
+    if (current === 0) {
+      current = allImages.length;
+    }
+    slideLeft();
+});
+
+// Clique sur la flèche de droite
+next.addEventListener("click", function () {
+    if (current === allImages.length - 1) {
+      current = -1;
+    }
+    slideRight();
+});

@@ -114,8 +114,8 @@ h1{
 }
 @media screen and (max-width: 1000px) {
     .modal-content{
-        width: 80%;
-        height: 80%;
+        width: 100%;
+        height: 100%;
     }
 }
 
@@ -136,6 +136,15 @@ h1{
     animation-name: zoom;
     animation-duration: 0.6s;
 }
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
 
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)} 
@@ -149,7 +158,7 @@ h1{
 
 .overlay-close{
     position: relative;
-    width: 1000px;
+    width: 750px;
     margin: auto;
 }
 @media screen and (max-width: 1000px) {
@@ -161,13 +170,13 @@ h1{
 #close {
     position: absolute;
     top: -46px;
-    right: 65px;
+    right: 0px;
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
     transition: 0.3s;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
     #close{
         right: 15px;
     }
@@ -183,4 +192,54 @@ h1{
     .modal-content {
       width: 100%;
     }
+}
+
+/* SLIDER */
+#prev{
+    cursor: pointer;
+    position: absolute;
+    top: 46%;
+    left: 0;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    animation-delay: 0.1ms;
+}
+#next{
+    cursor: pointer;
+    position: absolute;
+    top: 46%;
+    right: 0;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    animation-delay: 0.1ms;
+  }
+@media screen and (max-width: 500px) {
+    #next, #prev{
+        padding: 16px 8px;
+    }
+}
+#prev:hover, #next:hover{
+    background-color: rgba(0,0,0,0.8);
 }
