@@ -64,6 +64,9 @@ buttonShowAll.addEventListener("click", showAll);
 let modal = document.getElementById('my-modal');
 let modalImg = document.getElementById("modal-image");
 let allImages = document.querySelectorAll('.avion, .voiture, .nature');
+let allCarImages = document.querySelectorAll('.voiture');
+let allPlanesImages = document.querySelectorAll('.avion');
+let allNatureImages = document.querySelectorAll('.nature');
 let close = document.getElementById('close');
 
 function displayModal(){
@@ -87,29 +90,87 @@ let next = document.getElementById('next');
 let current = 0;
 
 // Afficher photo précédente
+
 function slideLeft() {
-    modalImg.src = allImages[current - 1].src;
-    current--;
+    if (buttonCars.classList.contains('active')){
+        modalImg.src = allCarImages[current - 1].src;
+        current--;
+    }else if(buttonNature.classList.contains('active')){
+        modalImg.src = allNatureImages[current - 1].src;
+        current--;
+    }else if(buttonPlanes.classList.contains('active')){
+        modalImg.src = allPlanesImages[current - 1].src;
+        current--;
+    }else if(buttonShowAll.classList.contains('active')){
+        modalImg.src = allImages[current - 1].src;
+        current--;
+    }
 }
 
 // Afficher photo suivante
 function slideRight() {
-    modalImg.src = allImages[current + 1].src;
-    current++;
+    if (buttonCars.classList.contains('active')){
+        modalImg.src = allCarImages[current + 1].src;
+        current++;
+    }else if(buttonNature.classList.contains('active')){
+        modalImg.src = allNatureImages[current + 1].src;
+        current++;
+    }else if(buttonPlanes.classList.contains('active')){
+        modalImg.src = allPlanesImages[current + 1].src;
+        current++;
+    }else if(buttonShowAll.classList.contains('active')){
+        modalImg.src = allImages[current + 1].src;
+        current++;
+    }
 }
 
 // Clique sur la flèche de gauche
 prev.addEventListener("click", function () {
-    if (current === 0) {
-      current = allImages.length;
+    if (buttonCars.classList.contains('active')){
+        if (current === 0) {
+        current = allCarImages.length;
+        }
+        slideLeft();
+    }else if (buttonNature.classList.contains('active')){
+        if (current === 0) {
+            current = allNatureImages.length;
+            }
+        slideLeft();
+    }else if (buttonPlanes.classList.contains('active')){
+        if (current === 0) {
+            current = allPlanesImages.length;
+            }
+        slideLeft();
+    }else if (buttonShowAll.classList.contains('active')){
+        if (current === 0) {
+            current = allImages.length;
+            }
+        slideLeft();
     }
-    slideLeft();
 });
 
 // Clique sur la flèche de droite
 next.addEventListener("click", function () {
-    if (current === allImages.length - 1) {
-      current = -1;
+    if (buttonCars.classList.contains('active')){
+        if (current === allCarImages.length - 1) {
+            current = -1;
+        }
+        slideRight();
+    }else if (buttonNature.classList.contains('active')){
+        if (current === allNatureImages.length - 1) {
+            current = -1;
+        }
+        slideRight();
+    }else if (buttonPlanes.classList.contains('active')){
+        if (current === allPlanesImages.length - 1) {
+            current = -1;
+        }
+        slideRight();
+    }else if (buttonShowAll.classList.contains('active')){
+        if (current === allImages.length - 1) {
+            current = -1;
+        }
+        slideRight();
     }
-    slideRight();
 });
+
