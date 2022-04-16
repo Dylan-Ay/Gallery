@@ -243,3 +243,20 @@ h1{
 #prev:hover, #next:hover{
     background-color: rgba(0,0,0,0.8);
 }
+
+/* FOOTER */
+footer a {
+    display: block;
+    padding: 20px 0;
+    width: 20rem;
+    margin: auto;
+    text-decoration: none;
+    transition: linear 0.2s;
+    color: black;
+    font-weight: 500;
+}
+    
+footer a:hover {
+    font-weight: 600;
+    transform: scaleX(1.08);
+}
