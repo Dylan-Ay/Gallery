@@ -9,9 +9,11 @@ Thanks for checking out this front-end personal project.
 ## The Project
 
 It's a JavaScript vanilla project. 
-There is a filter functionality which allows you to filter by categories the differents pictures.
-Another functionality which is the modal, when you click on a picture it will open it bigger.
-The last functionality is the slider one, you can browse trough the difference pictures according to which filter is on.
+
+The functionalities are :
+- Filter the differences pictures by categories
+- The modal, which allows you to open the picture bigger
+- The slider, which allows you to browse trough the differents pictures according to which filter is on when the picture is opened
 
 Stacks used :
 - JavaScript
