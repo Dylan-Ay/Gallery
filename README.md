@@ -11,7 +11,7 @@ Thanks for checking out this front-end personal project.
 It's a JavaScript vanilla project. 
 
 The functionalities are :
-- Filter the differences pictures by categories
+- Filter the differents pictures by categories
 - The modal, which allows you to open the picture bigger
 - The slider, which allows you to browse trough the differents pictures according to which filter is on when the picture is opened
 
