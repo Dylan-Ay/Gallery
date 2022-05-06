@@ -19,5 +19,5 @@ Stacks used :
 - JavaScript
 - HTML5
 - CSS3
-
+ 
 **Don't hesitate to contact me for further informations!** 🚀
